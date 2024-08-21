@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import 'package:intl/intl.dart';
 import 'package:shrine/model/product.dart';
 import 'package:shrine/model/products_repository.dart';
@@ -60,6 +62,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
         leading: IconButton(
           icon: const Icon(
             Icons.menu,
@@ -90,6 +93,7 @@ class HomePage extends StatelessWidget {
             },
           ),
         ],
+        backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: GridView.count(
           crossAxisCount: 2,
