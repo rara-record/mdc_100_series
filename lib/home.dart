@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  // 상단 앱 바 추가 : https://codelabs.developers.google.com/codelabs/mdc-102-flutter?hl=ko#3
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
