@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
       return Card(
         clipBehavior: Clip.antiAlias,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             AspectRatio(
               aspectRatio: 1.0 / 0.6,
@@ -35,19 +35,22 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+              padding: const EdgeInsets.fromLTRB(16.0, 22.0, 16.0, 8.0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
                     product.name,
-                    style: theme.textTheme.titleLarge,
+                    style: theme.textTheme.labelLarge,
+                    softWrap: false,
+                    overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                   ),
-                  const SizedBox(height: 8.0),
+                  const SizedBox(height: 4.0),
                   Text(
                     formatter.format(product.price),
-                    style: theme.textTheme.titleSmall,
+                    style: theme.textTheme.bodySmall,
                   ),
                 ],
               ),

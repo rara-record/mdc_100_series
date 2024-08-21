@@ -57,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                     _passwordController.clear();
                   },
                   style: TextButton.styleFrom(
-                    foregroundColor: kShrineBrown900,
+                    foregroundColor: Theme.of(context).colorScheme.secondary,
                     shape: const BeveledRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(7.0)),
                     ),
@@ -69,8 +69,8 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.pop(context);
                   },
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: kShrineBrown900,
-                    backgroundColor: kShrinePink100,
+                    foregroundColor: Theme.of(context).colorScheme.secondary,
+                    backgroundColor: Theme.of(context).colorScheme.primary,
                     elevation: 8.0,
                     shape: const BeveledRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(7.0)),
