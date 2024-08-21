@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:shrine/model/product.dart';
 import 'package:shrine/model/products_repository.dart';
+import 'package:shrine/supplemental/asymmetric_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -66,6 +67,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         systemOverlayStyle: SystemUiOverlayStyle.dark,
         leading: IconButton(
           icon: const Icon(
@@ -97,13 +99,10 @@ class HomePage extends StatelessWidget {
             },
           ),
         ],
-        backgroundColor: Theme.of(context).colorScheme.primary,
       ),
-      body: GridView.count(
-          crossAxisCount: 2,
-          padding: const EdgeInsets.all(16.0),
-          childAspectRatio: 1.0 / 1.1,
-          children: _buildGridCards(context)),
+      body: AsymmetricView(
+        products: ProductsRepository.loadProducts(Category.all),
+      ),
       resizeToAvoidBottomInset: false,
     );
   }

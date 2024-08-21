@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shrine/supplemental/cut_corners_border.dart';
 
 import 'home.dart';
 import 'login.dart';
@@ -22,30 +23,28 @@ class ShrineApp extends StatelessWidget {
 }
 
 final ThemeData _kShrineTheme = _buildShrineTheme();
-
 ThemeData _buildShrineTheme() {
-  final ThemeData base = ThemeData.light(useMaterial3: true);
+  final ThemeData base = ThemeData.light();
   return base.copyWith(
     colorScheme: base.colorScheme.copyWith(
-      primary: kShrinePink100,
-      onPrimary: kShrineBrown900,
-      secondary: kShrineBrown900,
+      primary: kShrinePurple,
+      secondary: kShrinePurple,
       error: kShrineErrorRed,
     ),
-    textTheme: _buildShrineTextTheme(base.textTheme),
+    scaffoldBackgroundColor: kShrineSurfaceWhite,
     textSelectionTheme: const TextSelectionThemeData(
-      selectionColor: kShrinePink100,
+      selectionColor: kShrinePurple,
     ),
     inputDecorationTheme: const InputDecorationTheme(
-      border: OutlineInputBorder(),
-      focusedBorder: OutlineInputBorder(
+      border: CutCornersBorder(),
+      focusedBorder: CutCornersBorder(
         borderSide: BorderSide(
           width: 2.0,
-          color: kShrinePink100,
+          color: kShrinePurple,
         ),
       ),
       floatingLabelStyle: TextStyle(
-        color: kShrinePink100,
+        color: kShrinePurple,
       ),
     ),
   );
